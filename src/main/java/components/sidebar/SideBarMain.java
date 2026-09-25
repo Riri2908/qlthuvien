@@ -53,6 +53,7 @@ public class SideBarMain extends JPanel {
 
     private BorderPanel menu(){
         BorderPanel menu = new BorderPanel(0,AppColor.BACKGROUND_SIDEBAR,0,0,null,0);
+        
         return menu;
 
     }
