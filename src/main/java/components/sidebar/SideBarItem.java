@@ -1,6 +1,10 @@
 package components.sidebar;
 
 import components.BasePanel;
+import components.page.ContentPanel;
+import components.page.PageKey;
+import registry.lang.Lang;
+import theme.AppColor;
 import theme.AppFont;
 
 import javax.swing.*;
@@ -11,51 +15,57 @@ import java.awt.event.MouseEvent;
 
 public class SideBarItem extends JPanel {
 
-    private boolean active=false;
+    private boolean active = false;
 
+    private final String text;
+    private final PageKey pageKey;
     private final JLabel title;
-    private final ImageIcon iconNormal;
-    private final ImageIcon iconActive;
+    private final ContentPanel contentPanel;
 
-    public SideBarItem(String Text, String logoName) {
+    public SideBarItem(PageKey pageKey, String text, String logoName, ContentPanel contentPanel) {
+        this.contentPanel = contentPanel;
+        this.pageKey = pageKey;
+        this.text = text;
 
-        this.iconNormal = new ImageIcon(BasePanel.createImageLogo(getClass(),"sidebar/"+logoName+"_gray",24,24));
-        this.iconActive = new ImageIcon(BasePanel.createImageLogo(getClass(),"sidebar/"+logoName+"_blue",24,24));
         setOpaque(false);
         setBackground(Color.WHITE);
         setPreferredSize(SideBarMain.SIZE_BUTTON);
         setMaximumSize(SideBarMain.MAX_SIZE_BUTTON);
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-        setBorder(new EmptyBorder(0,SideBarMain.MENU_PADDING_LEFT,0,0));
+        setBorder(new EmptyBorder(3,5,3,20));
+        setBackground(AppColor.BACKGROUND_SIDEBAR);
 
-        this.title=BasePanel.createTitle(Text, AppFont.NORMAL, new Color(121, 121, 121));
+        this.title=BasePanel.createTitle(Lang.get(text), AppFont.NORMAL_BOLD, AppColor.GRAY);
 
-        title.setIcon(iconNormal);
+        title.setIcon(BasePanel.createIcon(getClass(),"/icons/sidebar/"+logoName,24,24));
         title.setIconTextGap(SideBarMain.MENU_PADDING_LEFT);
         add(title);
 
         addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                contentPanel.showPage(Text);
-//            }
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                contentPanel.showPage(pageKey);
+            }
             @Override
             public void mouseEntered(MouseEvent e) {
-                if(!active) setBackground(new Color(232, 232, 232));
+                if(!active) setBackground(AppColor.BACKGROUND_SIDEBAR_ENTERED);
             }
             @Override
             public void mouseExited(MouseEvent e) {
-                if(!active) setBackground(new Color(255, 255, 255));
+                if(!active) setBackground(AppColor.BACKGROUND_SIDEBAR);
             }
         });
     }
 
     public void setActive(boolean active) {
         this.active = active;
-        setBackground(active ? new Color(231, 231, 255) : Color.WHITE);
-        title.setForeground(active ? new Color(110, 153, 255) : new Color(121, 121, 121));
-        title.setIcon(active ? iconActive : iconNormal);
+        setBackground(active ? AppColor.BACKGROUND_SIDEBAR_ENTERED : AppColor.BACKGROUND_SIDEBAR);
+        title.setForeground(active ? AppColor.WHITE : AppColor.GRAY);
         repaint();
+    }
+
+    public void refreshLang() {
+        title.setText(Lang.get(this.text));
     }
 
     @Override
@@ -64,7 +74,7 @@ public class SideBarItem extends JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
 
-        Color bg = active ? new Color(231, 231, 255) : getBackground();
+        Color bg = active ? AppColor.BACKGROUND_SIDEBAR_ENTERED : getBackground();
 
         g2.setColor(bg);
 
