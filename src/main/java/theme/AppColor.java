@@ -13,5 +13,6 @@ public class AppColor {
 
     public static final Color BACKGROUND = new Color(245, 247, 250);
     public static final Color BACKGROUND_SIDEBAR = new Color(13, 43, 82);
+    public static final Color BACKGROUND_SIDEBAR_ENTERED = new Color(26, 113, 225);
     public static final Color TEXT_PRIMARY = new Color(33, 37, 41);
 }

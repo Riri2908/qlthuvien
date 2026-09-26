@@ -1,4 +1,6 @@
+import components.page.ContentPanel;
 import components.sidebar.SideBarMain;
+import registry.lang.Lang;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,14 +10,19 @@ public class Run {
     public static final int HEIGHT = 720;
 
     void main(){
-        JFrame frame = new JFrame("Quản lý thư viện");
+        Lang.load("vi");
+
+        JFrame frame = new JFrame(Lang.get("app.title"));
         frame.setSize(new Dimension(WIDTH,HEIGHT));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        SideBarMain sideBarMain = new SideBarMain();
+        ContentPanel contentPanel = new ContentPanel();
+        SideBarMain sideBarMain = new SideBarMain(contentPanel);
 
         frame.add(sideBarMain,BorderLayout.WEST);
+        frame.add(contentPanel,BorderLayout.CENTER);
         frame.setVisible(true);
+
     }
 }

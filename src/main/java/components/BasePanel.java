@@ -12,13 +12,13 @@ import java.util.Objects;
 public abstract class BasePanel {
 
     public static Image createImageLogo(Class <?> clazz, String name, int width, int height) {
-        ImageIcon logo=new ImageIcon(Objects.requireNonNull(clazz.getResource("/icons/"+name+".png")));
+        ImageIcon logo=new ImageIcon(Objects.requireNonNull(clazz.getResource(name+".png")));
         return logo.getImage().getScaledInstance(width,height, Image.SCALE_SMOOTH);
     }
 
     public static Icon createIcon(Class<?> clazz, String name, int width, int height, Color color) {
 
-        FlatSVGIcon icon = new FlatSVGIcon(Objects.requireNonNull(clazz.getResource("/icons/" + name + ".svg")));
+        FlatSVGIcon icon = new FlatSVGIcon(Objects.requireNonNull(clazz.getResource(  name + ".svg")));
 
         icon.setColorFilter(new FlatSVGIcon.ColorFilter(c -> color));
 
@@ -27,7 +27,7 @@ public abstract class BasePanel {
 
     public static Icon createIcon(Class<?> clazz, String name, int width, int height) {
 
-        FlatSVGIcon icon = new FlatSVGIcon(Objects.requireNonNull(clazz.getResource("/icons/" + name + ".svg")));
+        FlatSVGIcon icon = new FlatSVGIcon(Objects.requireNonNull(clazz.getResource(name + ".svg")));
 
         return icon.derive(width, height);
     }
