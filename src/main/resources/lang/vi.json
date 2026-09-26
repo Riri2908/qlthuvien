@@ -1,0 +1,24 @@
+{
+  "app": {
+    "title": "Quản lý thư viện"
+  },
+  "sideBar": {
+    "header": "Thư viện",
+    "sub_header": "Quản lý thư viện"
+  },
+  "menu": {
+    "homePage": "Trang chủ",
+    "reader": "Độc giả",
+    "loanRecord": "Mượn - trả sách",
+    "report": "Báo cáo",
+    "book": "Sách"
+  },
+  "button": {
+    "save": "Lưu",
+    "cancel": "Hủy"
+  },
+  "message": {
+    "success": "Thành công",
+    "error": "Có lỗi xảy ra"
+  }
+}

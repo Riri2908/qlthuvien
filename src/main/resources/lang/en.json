@@ -1,0 +1,24 @@
+{
+  "app": {
+    "title": "Library Management"
+  },
+  "sideBar": {
+    "header": "Library",
+    "sub_header": "Library Management"
+  },
+  "menu": {
+    "homePage": "Home Page",
+    "reader": "Readers",
+    "loanRecord": "Borrow / Return",
+    "report": "Reports",
+    "book": "Books"
+  },
+  "button": {
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "message": {
+    "success": "Success",
+    "error": "An error occurred"
+  }
+}
