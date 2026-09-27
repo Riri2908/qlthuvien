@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Run {
-    public static final int WIDTH = 1280;
-    public static final int HEIGHT = 720;
+    public static final int WIDTH = 1440;
+    public static final int HEIGHT = 820;
 
     void main(){
         Lang.load("vi");

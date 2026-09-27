@@ -1,24 +1,68 @@
 {
-  "app": {
-    "title": "Quản lý thư viện"
+  "app": {"title": "Quản lý thư viện"},
+
+  "sideBar": {"header": "Thư viện", "sub_header": "Quản lý thư viện"},
+
+  "menu": {"homePage": "Trang chủ", "reader": "Độc giả", "loanRecord": "Mượn - trả sách", "report": "Báo cáo", "book": "Sách"},
+
+  "homePage" : {
+    "title" : "Tổng quan thư viện", "sub_title" :  "Chào mừng đến với hệ thống quản lý thư viện!",
+
+    "banner": {"title": "Đọc sách mỗi ngày", "quote": "Là cách tốt nhất để phát triển bản thân - Albert Einstein", "action": "Lập phiếu mượn / trả"},
+
+    "stats": {
+      "total_books": {"label": "Tổng số sách", "increase": "↑ 12 so với tháng trước"},
+
+      "active_readers": {"label": "Độc giả đang hoạt động", "increase": "↑ 8 độc giả mới"},
+
+      "monthly_borrows": {"label": "Lượt mượn trong tháng", "increase": "↑ 20% so với tháng trước"},
+
+      "monthly_returns": {"label": "Lượt trả trong tháng", "increase": "↑ 18% so với tháng trước"}
+    },
+
+    "charts": {
+      "borrow_by_month": {
+        "title": "Thống kê mượn sách theo tháng",
+        "unit": "Đơn vị: lượt mượn sách / tháng",
+        "months": ["T1","T2","T3","T4","T5","T6", "T7","T8","T9","T10","T11","T12"]
+      },
+      "category_stats": {
+        "title": "Thống kê mượn - trả sách tháng này",
+        "total": "lượt mượn",
+        "categories": {"education": "Sách giáo khoa", "literature": "Văn học", "life_skill": "Kỹ năng sống", "economy": "Kinh tế", "technology": "Công nghệ", "other": "Khác"}
+      }
+    },
+
+    "top_books": {"title": "Sách được mượn nhiều nhất", "unit": "lượt"},
+
+    "quick_actions": {"title": "Thao tác nhanh", "add_book": "Thêm sách", "add_reader": "Thêm độc giả", "borrow_return": "Mượn - trả", "report": "Báo cáo"},
+
+    "rules": {
+      "title": "Quy định thư viện",
+      "items": ["Mỗi độc giả được mượn tối đa 5 cuốn.", "Thời gian mượn mặc định: 14 ngày.", "Phạt trả muộn: 5.000đ/ngày/sách."]
+    },
+
+    "due_books": {
+      "title": "Sách sắp hết hạn trả",
+      "columns": {"index": "STT", "book_name": "Tên sách", "reader": "Độc giả mượn", "due_date": "Ngày hết hạn", "status": "Trạng thái"},
+      "status": {"warning": "Sắp đến hạn"}
+    },
+
+    "late_fees": {
+      "title": "Tiền phạt trả muộn",
+      "columns": {"index": "STT", "book": "Sách", "return_date": "Ngày trả thực tế", "late_days": "Số ngày trễ", "fee": "Tiền phạt"},
+      "total": "Tổng tiền phạt hiện tại:"
+    },
+
+    "book_management": {
+      "title": "Quản lý sách",
+      "columns": {"index": "STT", "name": "Tên sách", "author": "Tác giả", "category": "Thể loại", "quantity": "Số lượng", "status": "Trạng thái"},
+      "status": {"available": "Còn", "out_of_stock": "Hết"},
+      "actions": {"view_all": "Xem toàn bộ quản lý sách"}
+    }
   },
-  "sideBar": {
-    "header": "Thư viện",
-    "sub_header": "Quản lý thư viện"
-  },
-  "menu": {
-    "homePage": "Trang chủ",
-    "reader": "Độc giả",
-    "loanRecord": "Mượn - trả sách",
-    "report": "Báo cáo",
-    "book": "Sách"
-  },
-  "button": {
-    "save": "Lưu",
-    "cancel": "Hủy"
-  },
-  "message": {
-    "success": "Thành công",
-    "error": "Có lỗi xảy ra"
-  }
+
+  "button": {"save": "Lưu", "cancel": "Hủy"},
+
+  "message": {"success": "Thành công", "error": "Có lỗi xảy ra"}
 }

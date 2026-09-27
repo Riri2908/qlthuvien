@@ -2,11 +2,15 @@ package components;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import components.ModernScrollBarUI;
+import registry.lang.Lang;
+import theme.AppColor;
 import theme.AppFont;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Objects;
 
 public abstract class BasePanel {
@@ -37,6 +41,41 @@ public abstract class BasePanel {
         title.setFont(font);
         title.setForeground(color);
         return title;
+    }
+
+    public static JLabel createTitle(String text, Font font, Color color, Icon icon) {
+        JLabel title = new JLabel(text);
+        title.setIcon(icon);
+        title.setIconTextGap(10);
+        title.setFont(font);
+        title.setForeground(color);
+        return title;
+    }
+
+    public static BorderPanel createButton(String text, Color textColor,Color backgroundColor){
+        BorderPanel btn = new BorderPanel(16 , backgroundColor,0,0,null,0);
+        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn.setBorder(new EmptyBorder(8,15,8,15));
+
+        JLabel btnLabel = BasePanel.createTitle(text, AppFont.SMALL_BOLD, textColor);
+
+        btn.add(btnLabel);
+
+        return btn;
+    }
+
+    public static BorderPanel createButton(String text, Color textColor,Color backgroundColor, Icon icon){
+        BorderPanel btn = new BorderPanel(16 , backgroundColor,0,0,null,0);
+        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn.setBorder(new EmptyBorder(8,15,8,15));
+
+        JLabel btnLabel = BasePanel.createTitle(text, AppFont.SMALL_BOLD, textColor);
+        btnLabel.setIcon(icon);
+        btnLabel.setIconTextGap(6);
+
+        btn.add(btnLabel);
+
+        return btn;
     }
 
     public static JPanel createItem(String title, JComponent component){
@@ -94,6 +133,7 @@ public abstract class BasePanel {
 
         return scrollPane;
     }
+
 
     public static String formatNumber(long number) {
 

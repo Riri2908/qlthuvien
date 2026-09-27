@@ -7,6 +7,7 @@ import registry.lang.Lang;
 import theme.AppColor;
 import theme.AppFont;
 import view.*;
+import view.homepage.HomePage;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -31,18 +32,18 @@ public class ContentPanel extends BorderPanel {
     private final JLabel topBar;
 
     public ContentPanel(){
-        super(0,AppColor.WHITE,0,0,null,0);
+        super(0,AppColor.LIGHT_GRAY,0,0,null,0);
         this.homePage = new HomePage();
         this.bookPage = new BooksPage();
         this.loanRecordPage = new LoanRecordPage();
         this.readerPage = new ReaderPage();
         this.reportPage = new ReportPage();
-        this.topBar = BasePanel.createTitle("Trang chủ", AppFont.TITLE, AppColor.BLACK);
+        this.topBar = BasePanel.createTitle(Lang.get("homePage.title"), AppFont.TITLE, AppColor.BLACK);
 
         setBorder(new EmptyBorder(10,10,10,10));
         setLayout(new BorderLayout());
 
-        this.contentPanel = new BorderPanel(0,AppColor.WHITE,0,0,null,0);
+        this.contentPanel = new BorderPanel(0,AppColor.LIGHT_GRAY,0,0,null,0);
         this.contentPanel.setLayout(cardLayout);
 
         this.contentPanel.add(homePage,PageKey.HOME.name());
@@ -51,7 +52,7 @@ public class ContentPanel extends BorderPanel {
         this.contentPanel.add(loanRecordPage, PageKey.LOAN_RECORD.name());
         this.contentPanel.add(reportPage, PageKey.REPORT.name());
 
-        add(topBar,BorderLayout.NORTH);
+//        add(topBar,BorderLayout.NORTH);
         add(contentPanel,BorderLayout.CENTER);
 
     }

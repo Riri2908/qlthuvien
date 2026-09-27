@@ -27,6 +27,7 @@ public class SideBarItem extends JPanel {
         this.pageKey = pageKey;
         this.text = text;
 
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
         setOpaque(false);
         setBackground(Color.WHITE);
         setPreferredSize(SideBarMain.SIZE_BUTTON);
@@ -35,7 +36,7 @@ public class SideBarItem extends JPanel {
         setBorder(new EmptyBorder(3,5,3,20));
         setBackground(AppColor.BACKGROUND_SIDEBAR);
 
-        this.title=BasePanel.createTitle(Lang.get(text), AppFont.NORMAL_BOLD, AppColor.GRAY);
+        this.title=BasePanel.createTitle(Lang.get(text), AppFont.NORMAL_BOLD, AppColor.WHITE);
 
         title.setIcon(BasePanel.createIcon(getClass(),"/icons/sidebar/"+logoName,24,24));
         title.setIconTextGap(SideBarMain.MENU_PADDING_LEFT);

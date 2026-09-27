@@ -77,7 +77,7 @@ public class SideBarMain extends JPanel {
         menu.setLayout(new BoxLayout(menu, BoxLayout.Y_AXIS));
         menu.setBorder(new EmptyBorder(MENU_PADDING_TOP,0,MENU_PADDING_BOTTOM,0));
 
-        contentPanel.registerMenuAndTitle(PageKey.HOME, "menu.homePage",this.homePage);
+        contentPanel.registerMenuAndTitle(PageKey.HOME, "homePage.title",this.homePage);
         contentPanel.registerMenuAndTitle(PageKey.BOOKS, "menu.book",this.book);
         contentPanel.registerMenuAndTitle(PageKey.READER, "menu.reader",this.reader);
         contentPanel.registerMenuAndTitle(PageKey.LOAN_RECORD, "menu.loanRecord",this.loanRecord);
