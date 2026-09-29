@@ -28,6 +28,17 @@ public class BorderPanel extends JPanel {
         setOpaque(false);
     }
 
+    public BorderPanel(int arc, Color bgColor, int shadowSize, int shadowOpacity, Color borderColor, int borderWidth, Cursor cursor) {
+        this.arc = arc;
+        this.bgColor = bgColor;
+        this.shadowSize = shadowSize;
+        this.shadowOpacity = shadowOpacity;
+        this.borderColor = borderColor;
+        this.borderWidth = borderWidth;
+        this.setCursor(cursor);
+        setOpaque(false);
+    }
+
     public void setBorder(Color borderColor, int borderWidth){
         this.borderColor = borderColor;
         this.borderWidth = borderWidth;

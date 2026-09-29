@@ -67,6 +67,7 @@ public class SideBarItem extends JPanel {
 
     public void refreshLang() {
         title.setText(Lang.get(this.text));
+        this.contentPanel.refreshLang(this.pageKey);
     }
 
     @Override

@@ -1,16 +1,12 @@
 package components;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
-import components.ModernScrollBarUI;
-import registry.lang.Lang;
-import theme.AppColor;
+
 import theme.AppFont;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.Objects;
 
 public abstract class BasePanel {
@@ -24,7 +20,7 @@ public abstract class BasePanel {
 
         FlatSVGIcon icon = new FlatSVGIcon(Objects.requireNonNull(clazz.getResource(  name + ".svg")));
 
-        icon.setColorFilter(new FlatSVGIcon.ColorFilter(c -> color));
+        icon.setColorFilter(new FlatSVGIcon.ColorFilter(_ -> color));
 
         return icon.derive(width, height);
     }
@@ -46,7 +42,7 @@ public abstract class BasePanel {
     public static JLabel createTitle(String text, Font font, Color color, Icon icon) {
         JLabel title = new JLabel(text);
         title.setIcon(icon);
-        title.setIconTextGap(10);
+        title.setIconTextGap(5);
         title.setFont(font);
         title.setForeground(color);
         return title;

@@ -1,22 +1,139 @@
 {
-  "app": {
-    "title": "Library Management"
-  },
-  "sideBar": {
-    "header": "Library",
-    "sub_header": "Library Management"
-  },
+  "app": {"title": "Library Management"},
+
+  "sideBar": {"header": "Library", "sub_header": "Library Management"},
+
   "menu": {
-    "homePage": "Home Page",
+    "homePage": "Home",
     "reader": "Readers",
-    "loanRecord": "Borrow / Return",
+    "loanRecord": "Borrow - Return",
     "report": "Reports",
     "book": "Books"
   },
+
+  "homePage": {
+    "title": "Library Overview",
+    "sub_title": "Welcome to the library management system!",
+
+    "banner": {
+      "title": "Read Books Every Day",
+      "quote": "The best way to develop yourself - Albert Einstein",
+      "action": "Create Borrow / Return Slip"
+    },
+
+    "stats": {
+      "total_books": {
+        "label": "Total Books",
+        "increase": "↑ 12 compared to last month"
+      },
+      "active_readers": {
+        "label": "Active Readers",
+        "increase": "↑ 8 new readers"
+      },
+      "monthly_borrows": {
+        "label": "Monthly Borrows",
+        "increase": "↑ 20% compared to last month"
+      },
+      "monthly_returns": {
+        "label": "Monthly Returns",
+        "increase": "↑ 18% compared to last month"
+      }
+    },
+
+    "charts": {
+      "borrow_by_month": {
+        "title": "Monthly Borrow Statistics",
+        "unit": "Unit: borrows / month",
+        "months": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+      },
+      "category_stats": {
+        "title": "Borrow - Return Statistics This Month",
+        "total": "borrows",
+        "categories": {
+          "education": "Textbooks",
+          "literature": "Literature",
+          "life_skill": "Life Skills",
+          "economy": "Economics",
+          "technology": "Technology",
+          "other": "Others"
+        }
+      }
+    },
+
+    "top_books": {
+      "title": "Most Borrowed Books",
+      "unit": "times"
+    },
+
+    "quick_actions": {
+      "title": "Quick Actions",
+      "add_book": "Add Book",
+      "add_reader": "Add Reader",
+      "loan_record": "Borrow - Return",
+      "report": "Reports"
+    },
+
+    "rules": {
+      "title": "Library Rules",
+      "items": [
+        "• Each reader can borrow up to 5 books.",
+        "• Default borrowing period: 14 days.",
+        "• Late return fee: 5,000 VND/day/book."
+      ]
+    },
+
+    "due_books": {
+      "title": "Books Near Due Date",
+      "columns": {
+        "index": "No.",
+        "book_name": "Book Name",
+        "reader": "Borrower",
+        "due_date": "Due Date",
+        "status": "Status"
+      },
+      "status": {
+        "warning": "Almost Due"
+      }
+    },
+
+    "late_fees": {
+      "title": "Late Return Fees",
+      "columns": {
+        "index": "No.",
+        "book": "Book",
+        "return_date": "Actual Return Date",
+        "late_days": "Late Days",
+        "fee": "Fee"
+      },
+      "total": "Total current fees:"
+    },
+
+    "book_management": {
+      "title": "Book Management",
+      "columns": {
+        "index": "No.",
+        "name": "Book Name",
+        "author": "Author",
+        "category": "Category",
+        "quantity": "Quantity",
+        "status": "Status"
+      },
+      "status": {
+        "available": "Available",
+        "out_of_stock": "Out of Stock"
+      },
+      "actions": {
+        "view_all": "View All Books"
+      }
+    }
+
+  },
+
   "button": {
     "save": "Save",
     "cancel": "Cancel"
   },
+
   "message": {
     "success": "Success",
     "error": "An error occurred"

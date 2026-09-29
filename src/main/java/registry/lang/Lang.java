@@ -6,10 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class Lang {
 
@@ -47,6 +44,26 @@ public class Lang {
         }
 
         return current.toString();
+    }
+
+    public static List<String> getList(String key) {
+        String[] keys = key.split("\\.");
+        Object current = data;
+
+        for (String k : keys) {
+            if (!(current instanceof Map)) return Collections.emptyList();
+            current = ((Map<?, ?>) current).get(k);
+            if (current == null) return Collections.emptyList();
+        }
+
+        if (current instanceof List<?>) {
+            return ((List<?>) current)
+                    .stream()
+                    .map(Object::toString)
+                    .toList();
+        }
+
+        return Collections.emptyList();
     }
 
     public static Map<String, Object> getData() {

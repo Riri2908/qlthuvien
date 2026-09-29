@@ -33,7 +33,7 @@ public class ContentPanel extends BorderPanel {
 
     public ContentPanel(){
         super(0,AppColor.LIGHT_GRAY,0,0,null,0);
-        this.homePage = new HomePage();
+        this.homePage = new HomePage(this);
         this.bookPage = new BooksPage();
         this.loanRecordPage = new LoanRecordPage();
         this.readerPage = new ReaderPage();
@@ -80,5 +80,6 @@ public class ContentPanel extends BorderPanel {
 
     public void refreshLang(PageKey pageKey){
         this.topBar.setText(Lang.get(titleMap.get(pageKey)));
+        this.homePage.updateLanguage();
     }
 }

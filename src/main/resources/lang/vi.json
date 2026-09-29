@@ -11,13 +11,13 @@
     "banner": {"title": "Đọc sách mỗi ngày", "quote": "Là cách tốt nhất để phát triển bản thân - Albert Einstein", "action": "Lập phiếu mượn / trả"},
 
     "stats": {
-      "total_books": {"label": "Tổng số sách", "increase": "↑ 12 so với tháng trước"},
+      "total_books": {"label": "Tổng số sách", "increase": " so với tháng trước"},
 
-      "active_readers": {"label": "Độc giả đang hoạt động", "increase": "↑ 8 độc giả mới"},
+      "active_readers": {"label": "Số lượng độc giả mới trong tháng", "increase": "độc giả mới"},
 
-      "monthly_borrows": {"label": "Lượt mượn trong tháng", "increase": "↑ 20% so với tháng trước"},
+      "monthly_borrows": {"label": "Lượt mượn trong tháng", "increase": "so với tháng trước"},
 
-      "monthly_returns": {"label": "Lượt trả trong tháng", "increase": "↑ 18% so với tháng trước"}
+      "monthly_returns": {"label": "Lượt trả trong tháng", "increase": "so với tháng trước"}
     },
 
     "charts": {
@@ -35,11 +35,11 @@
 
     "top_books": {"title": "Sách được mượn nhiều nhất", "unit": "lượt"},
 
-    "quick_actions": {"title": "Thao tác nhanh", "add_book": "Thêm sách", "add_reader": "Thêm độc giả", "borrow_return": "Mượn - trả", "report": "Báo cáo"},
+    "quick_actions": {"title": "Thao tác nhanh", "add_book": "Thêm sách", "add_reader": "Thêm độc giả", "loan_record": "Mượn - trả", "report": "Báo cáo"},
 
     "rules": {
       "title": "Quy định thư viện",
-      "items": ["Mỗi độc giả được mượn tối đa 5 cuốn.", "Thời gian mượn mặc định: 14 ngày.", "Phạt trả muộn: 5.000đ/ngày/sách."]
+      "items": ["• Mỗi độc giả được mượn tối đa 5 cuốn.", "• Thời gian mượn mặc định: 14 ngày.", "• Phạt trả muộn: 5.000đ/ngày/sách."]
     },
 
     "due_books": {

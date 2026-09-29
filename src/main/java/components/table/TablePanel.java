@@ -2,6 +2,7 @@ package components.table;
 
 import components.BorderPanel;
 import components.BasePanel;
+import registry.lang.Lang;
 import theme.AppFont;
 
 import javax.swing.*;
@@ -104,9 +105,9 @@ public class TablePanel extends BorderPanel {
         });
 
     }
-    public void addColumn(int order, String name){
-        column.put(order,name);
-        model.addColumn(name);
+    public void addColumn(int order, String key){
+        column.put(order, key);
+        model.addColumn(Lang.get(key));
     }
 
     public void addColumn(int order, String name, int width) {
@@ -205,6 +206,18 @@ public class TablePanel extends BorderPanel {
         }
 
         return data;
+    }
+
+    public void updateHeaderLanguage(){
+        for (Map.Entry<Integer, String> entry : column.entrySet()) {
+            int index = entry.getKey();
+            String key = entry.getValue();
+
+            table.getColumnModel().getColumn(index)
+                    .setHeaderValue(Lang.get(key));
+        }
+
+        table.getTableHeader().repaint();
     }
 
     public Object[] getSelectedRow(){
